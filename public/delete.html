@@ -1,0 +1,125 @@
+<!-- delete.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Account</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    label {
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border: 2px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+      transition: border 0.3s ease;
+    }
+
+    input[type="text"]:focus {
+      border-color: #6c8c9c;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #488286;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3a6a6a;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    p {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    p a {
+      color: #488286;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    p a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Delete Your Account</h2>
+    <form action="/delete-account" method="POST">
+      <label for="username">Enter Username to Delete Account:</label>
+      <input type="text" id="username" name="username" required>
+      <button type="submit">Delete Account</button>
+    </form>
+
+    <!-- Placeholder for error message -->
+    <div id="error-message"></div>
+
+    <p><a href="/login">Cancel and Go Back</a></p>
+  </div>
+
+  <script>
+    // Check if there's an error in the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const error = urlParams.get('error');
+    
+    // If an error exists, display it in the error-message div
+    if (error) {
+      const errorMessage = document.getElementById('error-message');
+      errorMessage.innerHTML = `<p class="error">${decodeURIComponent(error)}</p>`;
+    }
+  </script>
+</body>
+</html>

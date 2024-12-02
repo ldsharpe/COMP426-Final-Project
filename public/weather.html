@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Weather Checker</h1>
+    
+    <!-- User greeting area -->
+    <p>Welcome, <span id="username"></span></p>
+
+    <input type="text" id="city" placeholder="Enter City">
+    <button id="getWeather">Submit</button>
+    <div id="weather"></div>
+
+    <script src="script.js"></script>
+    <script>
+        // Use the username from the server-side session (passed via script tag or inline JS)
+        const username = '<%= username %>'; // This value should be passed from the server-side rendering
+
+        // Set the username on the page
+        if (username) {
+            document.getElementById('username').innerText = username;
+        } else {
+            document.getElementById('username').innerText = 'Guest';
+        }
+    </script>
+</body>
+</html>
