@@ -8,3 +8,7 @@ This project has a backend that stores usernames and passwords in a database. Us
 
 # Frontend
 Makes use of event handling (JavaScript listens for the form submission and triggers the API request) and user interaction via input fields. The frontend design ensures that users can quickly access the weather information they need while enjoying a smooth and visually appealing experience.
+
+
+# Presentation
+Link: https://www.youtube.com/watch?v=0pOPnPuXpJo&feature=youtu.be
